@@ -59,6 +59,16 @@
       "isVaccinated": true,
       "gender": "male",
       "species": "dog"
+    },
+    {
+      "id": "uzxm9rTAnLRc-MeyM3NLx",
+      "createdAt": "2023-11-26T22:19:13.508Z",
+      "updateAt": "2023-11-26T22:19:13.508Z",
+      "name": "Uzbek",
+      "age": 3,
+      "isVaccinated": false,
+      "gender": "male",
+      "species": "cat"
     }
   ]
 }

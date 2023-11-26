@@ -7,6 +7,8 @@ const router = express.Router();
 //     res.json({message: 'Get animals'});
 // });
 router.get('/', animalController.getAnimals);
+//-!!!-// router.get('/', animalController.getAnimals.bind(animalController));
+// Или делаем стрелочные функции в class AnimalController 
 
 // router.get('/:animalId', (req, res) => {
 //     //const animalId = req.params.animalId;

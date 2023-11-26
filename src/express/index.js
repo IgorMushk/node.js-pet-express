@@ -28,6 +28,9 @@ router.put('/:animalId', (req,res) => {
 */
 
 const app = express();
+app.use(express.json());
+// x-www-form-urlencoded
+//app.use(express.urlencoded({extended: true}));
 
 app.use((req,res,next) => {
     const id = nanoid();
