@@ -1,0 +1,64 @@
+{
+  "animals": [
+    {
+      "id": "pqKP4ZTU4WQ3SNdvDOBf2",
+      "createdAt": "2023-11-15T19:17:41.004Z",
+      "updatedAt": "2023-11-15T19:17:41.009Z",
+      "name": "Vasyl",
+      "age": 5,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "cat"
+    },
+    {
+      "id": "M9lyvjx_hxKvk2wu2XZ6f",
+      "createdAt": "2023-11-15T19:18:33.391Z",
+      "updatedAt": "2023-11-15T19:18:33.398Z",
+      "name": "Sirko",
+      "age": 7,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "dog"
+    },
+    {
+      "id": "uDmzJhQp8TfGS4khqy7nH",
+      "createdAt": "2023-11-15T19:19:27.158Z",
+      "updatedAt": "2023-11-15T19:19:27.163Z",
+      "name": "Lukas",
+      "age": 3,
+      "isVaccinated": false,
+      "gender": "male",
+      "species": "cat"
+    },
+    {
+      "id": "qmKS5gN8xKac0jiLzaQk5",
+      "createdAt": "2023-11-18T10:17:30.081Z",
+      "updateAt": "2023-11-18T10:17:30.081Z",
+      "name": "Vasyl",
+      "age": 5,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "cat"
+    },
+    {
+      "id": "Nz96c2d1deiogv5xT7rGp",
+      "createdAt": "2023-11-18T11:43:01.161Z",
+      "updateAt": "2023-11-18T11:43:01.161Z",
+      "name": "Murxik",
+      "age": 5,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "cat"
+    },
+    {
+      "id": "4ox-OfRQtVPZCsqc1dEwX",
+      "createdAt": "2023-11-18T19:30:18.878Z",
+      "updateAt": "2023-11-18T19:30:18.878Z",
+      "name": "Bobik",
+      "age": 5,
+      "isVaccinated": true,
+      "gender": "male",
+      "species": "dog"
+    }
+  ]
+}
