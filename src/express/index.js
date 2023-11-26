@@ -1,6 +1,8 @@
 const express = require('express');
 const { nanoid }  = require('nanoid');
+routers = require('./routes');
 
+/*
 // const Router = express.Router;
 // const router = Router();
 const router = express.Router();
@@ -23,6 +25,7 @@ router.put('/:animalId', (req,res) => {
     const {animalId} = req.params;
     res.json({message: `Update animal with id ${animalId}`});
 });
+*/
 
 const app = express();
 
@@ -34,7 +37,8 @@ app.use((req,res,next) => {
     //next(id);
 });
 
-app.use('/animals',  router);
+//app.use('/animals',  router);
+app.use(routers);
 
 app.get('/health', (req,res) => {
 //app.use('/health', (req,res) => {
