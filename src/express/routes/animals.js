@@ -1,5 +1,7 @@
 const express = require('express');
 const animalController = require('../../modules/animals/controllers');
+const createAnimalSchema = require('../../modules/animals/validationSchemas/createAnimal');
+const validate = require('../middlewares/validate');
 
 const router = express.Router();
 
@@ -20,7 +22,7 @@ router.get('/:animalId', animalController.getAnimalById);
 // router.post('/', (req,res) => {
 //     res.json({message: 'Create animal'});
 // });
-router.post('/', animalController.createAnimal);
+router.post('/', validate(createAnimalSchema), animalController.createAnimal);
 
 
 // router.put('/:animalId', (req,res) => {
