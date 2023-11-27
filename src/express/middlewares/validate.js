@@ -1,3 +1,5 @@
+const HttpError = require('../../modules/common/models/HttpError');
+
 const validate = (schema) => async (req, res, next) => {
   try {
     await schema.validateAsync(
@@ -10,7 +12,10 @@ const validate = (schema) => async (req, res, next) => {
     );
     next();
   } catch (err) {
-      next(err);
+    const httpError = new HttpError(422, 'ValidationError', err.details);
+    //const httpError = new HttpError(422, 'ValidationError', err.details[0].message);
+    next(httpError);
+
   }
 };
 
