@@ -7,7 +7,7 @@ class AnimalController {
   getAnimalById = async (req, res, next) => {
     const { animalId } = req.params;
     //res.json({message: `Get animal with id ${animalId}`});
-    try {
+    // try {
       //throw new Error('dsd'); // test
       const animal = await this.animalsService.getOneById(animalId);
       res.json({
@@ -15,9 +15,9 @@ class AnimalController {
         message: "Successfully retrieved animal",
         data: animal,
       });
-    } catch (error) {
-      next(error);
-    }
+    // } catch (error) {
+    //   next(error);
+    // }
   };
 
   getAnimals = async (req, res) => {
