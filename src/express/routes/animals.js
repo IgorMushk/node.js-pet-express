@@ -3,6 +3,7 @@ const animalController = require('../../modules/animals/controllers');
 const createAnimalSchema = require('../../modules/animals/validationSchemas/createAnimal');
 const validate = require('../middlewares/validate');
 const errorWrapper = require('../../modules/common/utils/errorWrapper');
+const updateAnimalSchema = require('../../modules/animals/validationSchemas/updateAnimal');
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.get('/', errorWrapper(animalController.getAnimals));
 //     const {animalId} = req.params;
 //     res.json({message: `Get animal with id ${animalId}`});
 // });
-router.get('/:animalId', errorWrapper(animalController.getAnimalById));
+router.get('/:animalId', validate(updateAnimalSchema), errorWrapper(animalController.getAnimalById));
 
 // router.post('/', (req,res) => {
 //     res.json({message: 'Create animal'});
@@ -31,5 +32,7 @@ router.post('/', validate(createAnimalSchema), errorWrapper(animalController.cre
 //     res.json({message: `Update animal with id ${animalId}`});
 // });
 router.put('/:animalId', errorWrapper(animalController.updateAnimal));
+
+router.delete('/:animalId', errorWrapper(animalController.deleteAnimal));
 
 module.exports = router;
