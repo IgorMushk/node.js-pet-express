@@ -1,13 +1,19 @@
 const express = require("express");
-const fs = require('node:fs');
-const path = require('node:path');
-const { nanoid } = require("nanoid");
-const morgan = require("morgan");
+// const fs = require('node:fs');
+// const path = require('node:path');
+// const { nanoid } = require("nanoid");
+// const morgan = require("morgan");
+const assignRequestId = require("./middlewares/assignRequestId");
+const getLogger = require("./middlewares/logger");
+
 routers = require("./routes");
+
+/*
 //morgan.token('type', function (req, res) { return req.headers['content-type'] });
 morgan.token('reqId', function (req, res) {
      return req.id;
     });
+*/
 
 /*
 // const Router = express.Router;
@@ -39,24 +45,29 @@ app.use(express.json());
 // x-www-form-urlencoded
 //app.use(express.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-  const id = nanoid();
-  req.id = id;
-  //res.send('qwerty');
-  next();
-  //next(id);
-});
+// app.use((req, res, next) => {
+//   const id = nanoid();
+//   req.id = id;
+//   //res.send('qwerty');
+//   next();
+//   //next(id);
+// });
+app.use(assignRequestId);
 
+/*
 //const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 //const accessLogStream = fs.createWriteStream(path.join(process.cwd(), 'logs','access.log'), { flags: 'a' })
 const accessLogStream = fs.createWriteStream(path.join(process.cwd(), 'access.log'), { flags: 'a' })
-
+*/
+/*
 app.use(
     morgan(
         ":reqId :method :url :status :res[content-length] - :response-time ms",
         { stream: accessLogStream, },
         ),
     );
+*/
+app.use(getLogger());
 
 //app.use('/animals',  router);
 app.use(routers);
